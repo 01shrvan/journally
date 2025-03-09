@@ -1,5 +1,13 @@
+import {
+  SignedIn,
+  SignedOut,
+  SignInButton,
+  SignUpButton,
+  UserButton,
+} from "@clerk/nextjs";
 import Link from "next/link";
 import React from "react";
+import { Button } from "./ui/button";
 
 const Header = () => {
   return (
@@ -13,7 +21,19 @@ const Header = () => {
         </Link>
 
         <div className="flex items-center gap-4">
-            {/* ctas */}
+          <SignedIn>
+            <UserButton />
+          </SignedIn>
+
+          <Link href="/journal/write">
+            <Button variant="journal" >Write New</Button>
+          </Link>
+
+          <SignedOut>
+            <SignInButton forceRedirectUrl="/dashboard">
+              <Button variant="outline">Login</Button>
+            </SignInButton>
+          </SignedOut>
         </div>
       </nav>
     </header>
