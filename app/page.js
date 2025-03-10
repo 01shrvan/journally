@@ -1,3 +1,4 @@
+import React from "react";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import {
@@ -8,14 +9,9 @@ import {
   Sparkles,
   BarChart2,
   FileText,
+  Layers,
+  Clock,
 } from "lucide-react";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-import faqs from "@/data/faqs";
 import { Card, CardContent } from "@/components/ui/card";
 import Link from "next/link";
 
@@ -37,6 +33,25 @@ const features = [
     title: "Secure & Private",
     description:
       "Your thoughts are safe with enterprise-grade security and privacy features.",
+  },
+];
+
+const howItWorks = [
+  {
+    icon: Calendar,
+    title: "Create an Account",
+    description: "Sign up in seconds and set up your personal journal space.",
+  },
+  {
+    icon: Layers,
+    title: "Customize Your Journal",
+    description: "Choose themes, templates, and settings that work for you.",
+  },
+  {
+    icon: Clock,
+    title: "Write Daily",
+    description:
+      "Build a habit with reminders and daily prompts to inspire you.",
   },
 ];
 
@@ -181,20 +196,26 @@ export default function Home() {
 
       <div className="mt-24">
         <h2 className="text-3xl font-bold text-center text-orange-900 mb-12">
-          Frequently Asked Questions
+          How Journally Works
         </h2>
-        <Accordion type="single" collapsible className="w-full mx-auto">
-          {faqs.map((faq, index) => (
-            <AccordionItem key={index} value={`item-${index}`}>
-              <AccordionTrigger className="text-orange-900 text-lg">
-                {faq.q}
-              </AccordionTrigger>
-              <AccordionContent className="text-orange-700">
-                {faq.a}
-              </AccordionContent>
-            </AccordionItem>
+        <div className="grid md:grid-cols-3 gap-8 relative">
+          {/* Add a connecting line container */}
+          <div className="hidden md:block absolute top-8 left-[25%] right-[25%] h-0.5 bg-orange-200 -z-10"></div>
+
+          {howItWorks.map((step, index) => (
+            <div key={index} className="text-center relative">
+              <div className="h-16 w-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6 relative z-10">
+                {React.createElement(step.icon, {
+                  className: "h-8 w-8 text-orange-600",
+                })}
+              </div>
+              <h3 className="text-xl font-bold text-orange-900 mb-3">
+                {step.title}
+              </h3>
+              <p className="text-orange-700">{step.description}</p>
+            </div>
           ))}
-        </Accordion>
+        </div>
       </div>
 
       <div className="mt-24">
