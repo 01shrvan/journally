@@ -11,6 +11,7 @@ import {
   FileText,
   Layers,
   Clock,
+  X,
 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import Link from "next/link";
@@ -42,11 +43,6 @@ const howItWorks = [
     icon: Calendar,
     title: "Create an Account",
     description: "Sign up in seconds and set up your personal journal space.",
-  },
-  {
-    icon: Layers,
-    title: "Customize Your Journal",
-    description: "Choose themes, templates, and settings that work for you.",
   },
   {
     icon: Clock,
@@ -203,7 +199,7 @@ export default async function Home() {
         <h2 className="text-3xl font-bold text-center text-orange-900 mb-12">
           How Journally Works
         </h2>
-        <div className="grid md:grid-cols-3 gap-8 relative">
+        <div className="grid md:grid-cols-2 gap-8 relative">
           {/* Add a connecting line container */}
           <div className="hidden md:block absolute top-8 left-[25%] right-[25%] h-0.5 bg-orange-200 -z-10"></div>
 
