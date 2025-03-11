@@ -63,7 +63,7 @@ export default async function Home() {
     <div className="container mx-auto px-4 pt-16 pb-16">
       <div className="max-w-5xl mx-auto text-center space-y-8">
         <h1 className="text-5xl md:text-7xl lg:text-8xl mb-6 gradient-title">
-          Journally: Your Story, Your Space
+          Your Story, Your Space
         </h1>
         <p className="text-lg md:text-xl text-orange-900 mb-8">
           Transform moments into memories with Journally.
