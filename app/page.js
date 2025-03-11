@@ -200,7 +200,6 @@ export default async function Home() {
           How Journally Works
         </h2>
         <div className="grid md:grid-cols-2 gap-8 relative">
-          {/* Add a connecting line container */}
           <div className="hidden md:block absolute top-8 left-[25%] right-[25%] h-0.5 bg-orange-200 -z-10"></div>
 
           {howItWorks.map((step, index) => (
