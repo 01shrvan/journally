@@ -1,9 +1,9 @@
 import Header from "@/components/header";
 import "./globals.css";
-import { Inter } from "next/font/google";
+import { Quicksand  } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
 
-const inter = Inter({ subsets: ["latin"] });
+const quicksand = Quicksand({ subsets: ["latin"], weight: ["400", "600"] });
 
 export const metadata = {
   title: "Journally",
@@ -14,15 +14,13 @@ export default function RootLayout({ children }) {
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={`${inter.className} text-orange-900`}>
+        <body className={`${quicksand.className} text-orange-900`}>
           <div className="bg-[url('/bg.jpg')] opacity-50 fixed -z-10 inset-0" />
           <Header />
           <main className="min-h-screen">{children}</main>
           <footer className="bg-orange-200 py-6 bg-opacity-10 flex justify-between items-center px-4">
             <div className="text-left">
-              <p>
-                Capture your thoughts, one day at a time.
-              </p>
+              <p>Capture your thoughts, one day at a time.</p>
             </div>
             <div className="text-right">
               Made with <span className="text-orange-900">&#10084;</span> by{" "}
