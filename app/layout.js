@@ -8,9 +8,9 @@ const quicksand = Quicksand({ subsets: ["latin"], weight: ["400", "600"] })
 export const metadata = {
   title: "Journally - Your Digital Journaling Companion",
   description:
-    "A sleek and efficient journaling application to capture your thoughts, memories, and reflections in a beautiful digital space.",
+    "A sleek and efficient journaling application to capture your thoughts, memories and reflections in a beautiful digital space.",
   icons: {
-    icon: "/Experiments.svg",
+    icon: "/favicon.svg",
   },
   openGraph: {
     type: "website",
@@ -18,7 +18,7 @@ export const metadata = {
     url: "https://journally01.vercel.app",
     title: "Journally - Your Digital Journaling Companion",
     description:
-      "A sleek and efficient journaling application to capture your thoughts, memories, and reflections in a beautiful digital space.",
+      "A sleek and efficient journaling application to capture your thoughts, memories and reflections in a beautiful digital space.",
     siteName: "Journally",
     images: [
       {
@@ -33,7 +33,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Journally - Your Digital Journaling Companion",
     description:
-      "A sleek and efficient journaling application to capture your thoughts, memories, and reflections in a beautiful digital space.",
+      "A sleek and efficient journaling application to capture your thoughts, memories and reflections in a beautiful digital space.",
     creator: "@01shrvan",
     images: ["/Experiments.svg"],
   },
