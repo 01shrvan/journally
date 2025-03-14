@@ -28,11 +28,9 @@ export function JournalFilters({ entries }) {
   const [date, setDate] = useState(null);
   const [filteredEntries, setFilteredEntries] = useState(entries);
 
-  // Apply filters whenever filter values or entries change
   useEffect(() => {
     let filtered = entries;
 
-    // Apply search filter
     if (searchQuery) {
       const query = searchQuery.toLowerCase();
       filtered = filtered.filter(
@@ -42,12 +40,10 @@ export function JournalFilters({ entries }) {
       );
     }
 
-    // Apply mood filter
     if (selectedMood) {
       filtered = filtered.filter((entry) => entry.mood === selectedMood);
     }
 
-    // Apply date filter
     if (date) {
       filtered = filtered.filter((entry) =>
         isSameDay(new Date(entry.createdAt), date)
@@ -65,7 +61,6 @@ export function JournalFilters({ entries }) {
 
   return (
     <>
-      {/* Filters */}
       <div className="flex flex-wrap gap-4">
         <div className="flex-1 min-w-[200px]">
           <Input
@@ -126,12 +121,10 @@ export function JournalFilters({ entries }) {
         )}
       </div>
 
-      {/* Results Summary */}
       <div className="text-sm text-gray-500">
         Showing {filteredEntries.length} of {entries.length} entries
       </div>
 
-      {/* Entries List */}
       {filteredEntries.length === 0 ? (
         <div className="text-center p-8">
           <p className="text-gray-500">No entries found</p>
