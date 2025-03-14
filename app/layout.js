@@ -1,32 +1,17 @@
-import Header from "@/components/header";
-import "./globals.css";
-import { Quicksand } from "next/font/google";
-import { ClerkProvider } from "@clerk/nextjs";
+import Header from "@/components/header"
+import "./globals.css"
+import { Quicksand } from "next/font/google"
+import { ClerkProvider } from "@clerk/nextjs"
 
-const quicksand = Quicksand({ subsets: ["latin"], weight: ["400", "600"] });
+const quicksand = Quicksand({ subsets: ["latin"], weight: ["400", "600"] })
 
 export const metadata = {
   title: "Journally - Your Digital Journaling Companion",
   description:
     "A sleek and efficient journaling application to capture your thoughts, memories, and reflections in a beautiful digital space.",
-  keywords:
-    "journal, diary, daily journal, digital journal, writing, reflection, personal growth, mindfulness",
-  authors: [{ name: "shrvan", url: "https://x.com/01shrvan" }],
-  creator: "shrvan",
   icons: {
-    icon: [
-      { url: "/favicon.svg", type: "image/svg+xml" },
-      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
-      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
-    ],
-    apple: [
-      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
-    ],
-    other: [
-      { rel: "mask-icon", url: "/safari-pinned-tab.svg", color: "#e8a87c" },
-    ],
+    icon: "/Experiments.svg",
   },
-  manifest: "/site.webmanifest",
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -37,7 +22,7 @@ export const metadata = {
     siteName: "Journally",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/Experiments.svg",
         width: 1200,
         height: 630,
         alt: "Journally - Your Digital Journaling Companion",
@@ -50,11 +35,11 @@ export const metadata = {
     description:
       "A sleek and efficient journaling application to capture your thoughts, memories, and reflections in a beautiful digital space.",
     creator: "@01shrvan",
-    images: ["/og-image.jpg"],
+    images: ["/Experiments.svg"],
   },
   viewport: "width=device-width, initial-scale=1",
-  themeColor: "#FBD38D", 
-};
+  themeColor: "#FBD38D",
+}
 
 export default function RootLayout({ children }) {
   return (
@@ -62,7 +47,6 @@ export default function RootLayout({ children }) {
       <html lang="en">
         <body className={`${quicksand.className} text-orange-900`}>
           <div className="bg-[url('/bg.jpg')] opacity-50 fixed -z-10 inset-0" />
-
           <Header />
           <main className="min-h-screen">{children}</main>
           <footer className="bg-orange-200 py-6 bg-opacity-10 flex justify-between items-center px-4">
@@ -85,5 +69,6 @@ export default function RootLayout({ children }) {
         </body>
       </html>
     </ClerkProvider>
-  );
+  )
 }
+
