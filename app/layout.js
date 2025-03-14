@@ -30,7 +30,7 @@ export const metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://journally.app",
+    url: "https://journally01.vercel.app",
     title: "Journally - Your Digital Journaling Companion",
     description:
       "A sleek and efficient journaling application to capture your thoughts, memories, and reflections in a beautiful digital space.",
